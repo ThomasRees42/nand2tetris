@@ -7,3 +7,42 @@
 // (R0, R1, R2 refer to RAM[0], RAM[1], and RAM[2], respectively.)
 
 // Put your code here.
+// Pseudo:
+// a = R0, b = R1, ans = R2
+// i = 0
+// for i to b:
+//  ans = ans + a
+// end
+
+    @i
+    M=0
+
+    @R2
+    M=0
+
+
+(LOOP)
+    @R1
+    D=M
+
+    @i
+    D=D-M
+
+    @END
+    D;JEQ
+
+    @R0
+    D=M
+
+    @R2
+    M=M+D
+
+    @i
+    M=M+1
+
+    @LOOP
+    0;JMP
+
+(END)
+    @END
+    0;JMP
